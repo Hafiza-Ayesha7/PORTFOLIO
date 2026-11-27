@@ -11,14 +11,36 @@
   <!-- Header & Navigation -->
   <header class="site-header">
     <div class="header-container">
-      <a href="#home" class="logo">Ayesha</a>
+      <a href="#home" class="logo" aria-label="Ayesha Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="28" height="28" rx="8" fill="url(#logoGrad)" />
+            <path d="M14 6.5L8.2 21H10.7L11.9 17.7H16.1L17.3 21H19.8L14 6.5ZM12.7 15.6L14 11.9L15.3 15.6H12.7Z" fill="#ffffff" />
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#a855f7" />
+                <stop offset="1" stop-color="#3b82f6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">Ayesha</span>
+      </a>
 
-      <!-- Hamburger Toggle Button -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-      </button>
+      <div class="header-controls">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch color theme" aria-pressed="false">
+          <span class="theme-icon" id="themeIcon" aria-hidden="true">&#9728;</span>
+          <span class="theme-label" id="themeLabel">Light</span>
+        </button>
+
+        <!-- Hamburger Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
 
       <!-- Navigation Drawer/Menu -->
       <nav class="nav-menu" id="navMenu">
@@ -28,6 +50,7 @@
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#volunteer" class="nav-link">Volunteer</a></li>
           <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#certificates" class="nav-link">Certificates</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -40,27 +63,41 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
-      <div class="hero-content">
-        <div class="status-badge">
-          <span class="status-dot"></span> Available for Opportunities
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-dot"></span> Available for Opportunities
+          </div>
+          <span class="sub-greeting">HELLO, I'M</span>
+          <h1>Ayesha</h1>
+          <h2 class="hero-subtitle">
+            Software Engineering Technology Student<br />
+            <span class="highlight">&amp; Web Developer</span>
+          </h2>
+          <p class="hero-desc">
+            I build clean, responsive and user-friendly websites while continuously developing my skills in modern web technologies.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View My Work &rarr;</a>
+            <a href="#contact" class="btn btn-outline">Let's Connect</a>
+          </div>
+          <div class="quick-links">
+            <a href="https://github.com/Hafiza-Ayesha7" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+            <a href="https://www.linkedin.com/in/ayesha-iqbal-298411341/" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
+            <a href="mailto:hafizaayesha725@gmail.com">Email &nearr;</a>
+          </div>
         </div>
-        <span class="sub-greeting">HELLO, I'M</span>
-        <h1>Ayesha</h1>
-        <h2 class="hero-subtitle">
-          Software Engineering Technology Student<br />
-          <span class="highlight">&amp; Web Developer</span>
-        </h2>
-        <p class="hero-desc">
-          I build clean, responsive and user-friendly websites while continuously developing my skills in modern web technologies.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View My Work &rarr;</a>
-          <a href="#contact" class="btn btn-outline">Let's Connect</a>
-        </div>
-        <div class="quick-links">
-          <a href="https://github.com/Hafiza-Ayesha7" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
-          <a href="https://www.linkedin.com/in/ayesha-iqbal-298411341/" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
-          <a href="mailto:hafizaayesha725@gmail.com">Email &nearr;</a>
+
+        <div class="hero-avatar-wrap">
+          <img
+            id="profilePhoto"
+            src="./assets/profile.jpg"
+            alt="Ayesha profile picture"
+            class="hero-avatar"
+          />
+          <p id="profileFallback" class="avatar-fallback" hidden>
+            Add your photo at <code>./assets/profile.jpg</code>
+          </p>
         </div>
       </div>
     </section>
@@ -112,6 +149,9 @@
           <h3>Full Stack Engineer</h3>
           <h4 class="company-name">Progree</h4>
           <p class="item-meta">Offer Letter &middot; Full-Stack Development and Git / Version Control</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/progree-offer.jpg" data-cert-title="Progree — Full Stack Engineer Offer Letter">
+            View Offer Letter &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -119,6 +159,9 @@
           <h3>Social Media Manager</h3>
           <h4 class="company-name">Med Sparkles &middot; Remote</h4>
           <p class="item-meta">Poster</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-smm-poster.jpg" data-cert-title="Med Sparkles — Social Media Manager Poster">
+            View Poster &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -126,12 +169,18 @@
           <h3>Ambassador</h3>
           <h4 class="company-name">Saafify</h4>
           <p>Student Ambassador at Saafify | Helping Pakistan "Tap. Clean. Relax." by connecting local communities with reliable, on-demand cleaning services.</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/saafify-ambassador.jpg" data-cert-title="Saafify — Student Ambassador">
+            View Credential &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">Oct 2026 – Present &middot; 2 mos</span>
           <h3>Outreach Coordinator</h3>
           <h4 class="company-name">AWS Student Builder Group SSUET</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/aws-sbu-ssuet.jpg" data-cert-title="AWS Student Builder Group SSUET — Outreach Coordinator">
+            View Credential &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -142,6 +191,9 @@
             <li>Joined the Learning Node family as a Volunteer, selected from a competitive pool of 100+ applicants.</li>
             <li>Serving as a WhatsApp Channel Moderator to keep the learning community engaged and informed, while applying technical insights.</li>
           </ul>
+          <button type="button" class="cert-btn" data-cert-img="./certs/learning-node-moderator.jpg" data-cert-title="Learning Node — Moderator">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -153,6 +205,9 @@
             <li>Collaborated remotely while balancing multiple concurrent fast-paced roles within the organization.</li>
           </ul>
           <p class="item-meta">Certificate, Poster &middot; Skills: Graphic Design, Canva, +1 skill</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-graphic-designer.jpg" data-cert-title="Med Sparkles — Graphic Designer Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -164,6 +219,9 @@
             <li>Collaborated remotely while balancing multiple concurrent fast-paced roles within the organization.</li>
           </ul>
           <p class="item-meta">Poster, Certificate &middot; Skills: Graphic Design, Digital Media and +4 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-academy-designer.jpg" data-cert-title="Medsparkles Academy — Graphic Designer Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -175,6 +233,9 @@
             <li>Designed impactful promotional or awareness materials for social welfare campaigns.</li>
           </ul>
           <p class="item-meta">Offer letter &middot; Skills: Visual Storytelling, Project Management and +3 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/relief-mission-offer.jpg" data-cert-title="Relief Mission Foundation — Offer Letter">
+            View Offer Letter &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -186,6 +247,9 @@
             <li>Developed visual concepts aligned with client and project requirements.</li>
             <li>Collaborated with the team to develop engaging visual content for social impact initiatives.</li>
           </ul>
+          <button type="button" class="cert-btn" data-cert-img="./certs/techshiner-gfx-intern.jpg" data-cert-title="TechShiner — GFX Designer Intern">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -197,6 +261,9 @@
             <li>Offered volunteer time to support community operations, tech events, or platform growth.</li>
           </ul>
           <p class="item-meta">Certificate of Appreciation &middot; Skills: Community Engagement, AI &amp; tech community awareness, +2 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/zest-ai-volunteer.jpg" data-cert-title="ZEST AI Hub — Certificate of Appreciation">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -208,6 +275,9 @@
             <li>Balanced on-ground community events and digital outreach in a hybrid working model.</li>
           </ul>
           <p class="item-meta">Skills: Local networking, Hybrid event coordination and +3 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/bano-qabil-ambassador.jpg" data-cert-title="Bano Qabil Karachi — Ambassador">
+            View Credential &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -218,6 +288,9 @@
             <li>Managed large-scale virtual audiences confidently to maintain an engaging environment.</li>
           </ul>
           <p class="item-meta">Certificate, Poster &middot; Skills: Live moderation, Public speaking &amp; hosting, +4 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-host.jpg" data-cert-title="Med Sparkles — Host Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -229,6 +302,9 @@
             <li>Contributed to a fast-growing, community-driven platform focused on professional networking and digital education.</li>
           </ul>
           <p class="item-meta">Certificates, Posters &middot; Skills: Educational Outreach, Community Building, +3 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-ambassador.jpg" data-cert-title="Med Sparkles — Ambassador Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -248,6 +324,9 @@
             <li><strong>UI/UX Optimization:</strong> Translating digital layouts and interface designs into functional web components.</li>
           </ul>
           <p class="item-meta">Skills: Responsive Web Design, Front End Engineering Design (FEED) and +7 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/safex-web-dev.jpg" data-cert-title="SafeX Solutions — Web Development Internship">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -259,6 +338,9 @@
             <li>Created digital assets and graphics aligned with corporate brand guidelines.</li>
           </ul>
           <p class="item-meta">Certificate &middot; Skills: Visual asset creation, Graphic design (GFX) and +3 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/techshiner-gfx-cert.jpg" data-cert-title="TechShiner — GFX Designer Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -267,6 +349,9 @@
           <h4 class="company-name">ZEST AI Hub</h4>
           <p>Completed the AI Research Internship with Distinction.</p>
           <p class="item-meta">Certificate &middot; Skills: Artificial Intelligence (AI), Research Skills, +2 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/zest-ai-research.jpg" data-cert-title="ZEST AI Hub — AI Research Internship Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -275,6 +360,9 @@
           <h4 class="company-name">Aspire Institute &middot; Karachi Central District, Sindh, Pakistan &middot; Remote</h4>
           <p>Selected from thousands of global applicants for a fully-funded leadership journey, learning from Harvard faculty and global experts while developing skills in critical thinking, public speaking, and community impact.</p>
           <p class="item-meta">Certificate &middot; Skills: Communication and Leadership</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/aspire-fellowship.jpg" data-cert-title="Aspire Institute — Aspire Leaders Program Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -283,6 +371,9 @@
           <h4 class="company-name">Arch Technologies &middot; Remote</h4>
           <p>Worked on building responsive web applications and enhancing user interfaces using modern web technologies.</p>
           <p class="item-meta">Certificate, Letter of recommendation &middot; Skills: JavaScript, HTML and +2 skills</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/arch-technologies-cert.jpg" data-cert-title="Arch Technologies — Web Development Internship Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
       </div>
@@ -300,60 +391,90 @@
           <span class="timeline-date">Apr 2026 – Present &middot; 8 mos</span>
           <h3>Ambassador</h3>
           <h4 class="company-name">Med Sparkles</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-ambassador.jpg" data-cert-title="Med Sparkles — Ambassador">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">2026 – Present</span>
           <h3>Graphic Designer</h3>
           <h4 class="company-name">Med Sparkles</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-graphic-designer.jpg" data-cert-title="Med Sparkles — Graphic Designer">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">2026 – Present</span>
           <h3>Host</h3>
           <h4 class="company-name">Med Sparkles</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-host.jpg" data-cert-title="Med Sparkles — Host">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">2026 – Present</span>
           <h3>Graphic Designer</h3>
           <h4 class="company-name">Medsparkles Academy</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-academy-designer.jpg" data-cert-title="Medsparkles Academy — Graphic Designer">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">2026 – Present</span>
           <h3>Ambassador</h3>
           <h4 class="company-name">Bano Qabil Karachi</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/bano-qabil-ambassador.jpg" data-cert-title="Bano Qabil Karachi — Ambassador">
+            View Credential &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">2026 – Present</span>
           <h3>Volunteer</h3>
           <h4 class="company-name">Zest AI Hub</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/zest-ai-volunteer.jpg" data-cert-title="ZEST AI Hub — Volunteer">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">2026 – Present</span>
           <h3>WhatsApp Channel Moderator</h3>
           <h4 class="company-name">Learning Node</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/learning-node-moderator.jpg" data-cert-title="Learning Node — Moderator">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">2026 – Present</span>
           <h3>Social Media Manager</h3>
           <h4 class="company-name">Med Sparkles</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/medsparkles-smm-poster.jpg" data-cert-title="Med Sparkles — Social Media Manager">
+            View Poster &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">2026 – Present</span>
           <h3>Ambassador</h3>
           <h4 class="company-name">Saafify</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/saafify-ambassador.jpg" data-cert-title="Saafify — Ambassador">
+            View Credential &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
           <span class="timeline-date">Oct 2026 – Present &middot; 2 mos</span>
           <h3>Outreach Coordinator</h3>
           <h4 class="company-name">AWS Student Builder Group SSUET</h4>
+          <button type="button" class="cert-btn" data-cert-img="./certs/aws-sbu-ssuet.jpg" data-cert-title="AWS Student Builder Group SSUET — Outreach Coordinator">
+            View Credential &nearr;
+          </button>
         </article>
 
       </div>
@@ -393,6 +514,9 @@
           <h3>Course, Graphic Designing &amp; UI UX DESIGN</h3>
           <h4 class="company-name">Peoples Information Technology Program – NED Academy</h4>
           <p class="item-meta">Certificate</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/ned-uiux-graphic-design.jpg" data-cert-title="NED Academy — Graphic Designing & UI/UX Design Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -400,6 +524,9 @@
           <h3>Course, CIT</h3>
           <h4 class="company-name">Bano Qabil</h4>
           <p class="item-meta">Certificate &middot; Skills: TypeScript</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/bano-qabil-cit.jpg" data-cert-title="Bano Qabil — CIT Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -407,6 +534,9 @@
           <h3>Course, Python Programming</h3>
           <h4 class="company-name">Bano Qabil</h4>
           <p class="item-meta">Certificate &middot; Skills: Git / Version Control</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/bano-qabil-python.jpg" data-cert-title="Bano Qabil — Python Programming Certificate">
+            View Certificate &nearr;
+          </button>
         </article>
 
         <article class="timeline-item">
@@ -414,6 +544,132 @@
           <h3>Hifz e Quran</h3>
           <h4 class="company-name">Iqra Tarbiyat ul Atfal</h4>
           <p class="item-meta">Marksheet</p>
+          <button type="button" class="cert-btn" data-cert-img="./certs/hifz-marksheet.jpg" data-cert-title="Iqra Tarbiyat ul Atfal — Hifz e Quran Marksheet">
+            View Marksheet &nearr;
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates-section">
+      <span class="section-prefix">// CERTIFICATES &amp; CREDENTIALS</span>
+      <div class="section-title">
+        <h2>Courses, Internships &amp; <span class="highlight">Certificates</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <span class="project-type">COURSE CERTIFICATE</span>
+          <h3>Graphic Designing &amp; UI/UX Design</h3>
+          <p>Peoples Information Technology Program – NED Academy (Sep 2025 – Nov 2025).</p>
+          <div class="tags">
+            <span>UI/UX</span>
+            <span>Graphic Design</span>
+            <span>NED Academy</span>
+          </div>
+          <div class="project-links">
+            <button type="button" class="cert-btn" data-cert-img="./certs/ned-uiux-graphic-design.jpg" data-cert-title="NED Academy — Graphic Designing & UI/UX Design Certificate">
+              Preview Certificate &nearr;
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-type">COURSE CERTIFICATE</span>
+          <h3>CIT (Certificate in Information Technology)</h3>
+          <p>Completed CIT training covering core computing and TypeScript fundamentals with Bano Qabil (2025).</p>
+          <div class="tags">
+            <span>CIT</span>
+            <span>TypeScript</span>
+            <span>Bano Qabil</span>
+          </div>
+          <div class="project-links">
+            <button type="button" class="cert-btn" data-cert-img="./certs/bano-qabil-cit.jpg" data-cert-title="Bano Qabil — CIT Certificate">
+              Preview Certificate &nearr;
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-type">COURSE CERTIFICATE</span>
+          <h3>Python Programming</h3>
+          <p>Completed Python programming and Git / version control training with Bano Qabil (2025).</p>
+          <div class="tags">
+            <span>Python</span>
+            <span>Git</span>
+            <span>Bano Qabil</span>
+          </div>
+          <div class="project-links">
+            <button type="button" class="cert-btn" data-cert-img="./certs/bano-qabil-python.jpg" data-cert-title="Bano Qabil — Python Programming Certificate">
+              Preview Certificate &nearr;
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-type">FELLOWSHIP CERTIFICATE</span>
+          <h3>Aspire Leaders Program</h3>
+          <p>Completed leadership fellowship with Aspire Institute covering communication and leadership (Apr 2026 – Jul 2026).</p>
+          <div class="tags">
+            <span>Leadership</span>
+            <span>Communication</span>
+            <span>Aspire Institute</span>
+          </div>
+          <div class="project-links">
+            <button type="button" class="cert-btn" data-cert-img="./certs/aspire-fellowship.jpg" data-cert-title="Aspire Institute — Aspire Leaders Program Certificate">
+              Preview Certificate &nearr;
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-type">INTERNSHIP CERTIFICATE</span>
+          <h3>AI Research Internship Program</h3>
+          <p>Completed AI Research Internship with Distinction at ZEST AI Hub (Sep 2026).</p>
+          <div class="tags">
+            <span>AI</span>
+            <span>Research</span>
+            <span>ZEST AI Hub</span>
+          </div>
+          <div class="project-links">
+            <button type="button" class="cert-btn" data-cert-img="./certs/zest-ai-research.jpg" data-cert-title="ZEST AI Hub — AI Research Internship Certificate">
+              Preview Certificate &nearr;
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-type">INTERNSHIP &amp; LOR</span>
+          <h3>Web Development Internship</h3>
+          <p>Completed web development internship with certificate and letter of recommendation at Arch Technologies (Feb 2026 – Apr 2026).</p>
+          <div class="tags">
+            <span>HTML</span>
+            <span>JavaScript</span>
+            <span>Arch Technologies</span>
+          </div>
+          <div class="project-links">
+            <button type="button" class="cert-btn" data-cert-img="./certs/arch-technologies-cert.jpg" data-cert-title="Arch Technologies — Web Development Internship Certificate">
+              Preview Certificate &nearr;
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-type">INTERNSHIP CERTIFICATE</span>
+          <h3>GFX Designer &amp; Web Internships</h3>
+          <p>Certificates and offer letters from SafeX Solutions, TechShiner, Relief Mission Foundation, Med Sparkles, and Progree.</p>
+          <div class="tags">
+            <span>Web Dev</span>
+            <span>GFX Design</span>
+            <span>Internships</span>
+          </div>
+          <div class="project-links">
+            <button type="button" class="cert-btn" data-cert-img="./certs/safex-web-dev.jpg" data-cert-title="SafeX Solutions — Web Development Internship Certificate">
+              Preview Certificate &nearr;
+            </button>
+          </div>
         </article>
 
       </div>
@@ -556,6 +812,16 @@
     </section>
 
   </main>
+
+  <!-- Certificate Preview Modal -->
+  <div id="certModal" class="cert-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+    <div class="cert-modal-content">
+      <button type="button" class="cert-modal-close" id="certModalClose" aria-label="Close certificate preview">&times;</button>
+      <h3 id="certModalTitle" class="cert-modal-title">Certificate Preview</h3>
+      <img id="certModalImg" src="" alt="Certificate Preview" />
+      <p id="certModalFallback" class="cert-modal-fallback"></p>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
